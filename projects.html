@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects</title>
+  <!-- Load same Inter font used on index.html -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      line-height: 1.6;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    nav {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    nav a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 0.75rem 1.25rem; /* larger, more clickable */
+      border: 1px solid rgba(3,102,214,0.15);
+      border-radius: 8px;
+      text-decoration: none;
+      color: #033e8c;
+      font-size: 1.05em;
+      font-weight: 600;
+      background: rgba(3,102,214,0.06);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+    }
+    nav a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(3,102,214,0.12);
+      background: rgba(3,102,214,0.12);
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.25rem;
+      margin-top: 2rem;
+    }
+    .project {
+      margin-bottom: 1.25rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .project-img {
+      width: 160px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      flex: 0 0 160px;
+      background: #f6f7f8; /* placeholder background if image missing */
+    }
+    .project-body {
+      flex: 1 1 auto;
+    }
+    .project-title {
+      font-weight: 700;
+      margin: 0 0 0.25rem 0;
+      display: flex;
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+    .project-date {
+      font-size: 0.85em;
+      color: #666;
+      font-weight: 500;
+    }
+    .project-links {
+      margin-top: 0.5rem;
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .project-links a {
+      font-size: 0.9em;
+      color: #0366d6;
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      background: rgba(3,102,214,0.04);
+      border: 1px solid rgba(3,102,214,0.06);
+    }
+    .project-links a:hover {
+      background: rgba(3,102,214,0.12);
+      transform: translateY(-1px);
+    }
+    @media (max-width: 600px) {
+      .project {
+        flex-direction: column;
+      }
+      .project-img {
+        width: 100%;
+        height: auto;
+        flex: none;
+      }
+    }
+    .project-title {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Projects</h1>
+
+  <!-- Navigation Buttons -->
+  <nav>
+    <a href="#ai">GenAI</a>
+    <a href="#science">Science</a>
+    <a href="#engineering">Engineering</a>
+  </nav>
+
+  <section id="ai">
+    <h2>GenAI</h2>
+    <div class="project">
+      <img class="project-img" src="images/bioinspiredllm.png" alt="BioinspiredLLM">
+      <div class="project-body">
+        <div class="project-title">BioinspiredLLM <span class="project-date">2022-2023</span></div>
+        <p>A fine-tuned large language model trained on biological and bioinspired materials science literature. The model is finetuned using a LoRA strategy after creating a synthetic Q-A distilled dataset. The model was designed and tested for knowledge retrieval abilities, hypothesis generation, as well as agentic potential in creating new materials.</p>
+        <p class="project-links">
+          <a href="https://doi.org/10.1002/advs.202306724" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a href="https://huggingface.co/collections/lamm-mit/bioinspired-llms-66a382d6eff6c13fda589886" target="_blank" rel="noopener noreferrer">Weights</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img class="project-img" src="images/llmxplants.png" alt="LLMs to Real World Experiment: Plant Materials">
+      <div class="project-body">
+        <div class="project-title">LLMs to Real World Experiment: Plant Materials <span class="project-date">2024-2025</span></div>
+        <p>Project based on bridging LLM generated content to real-life scientific experimentation. Using a new strategy called Hierarchical Sampling, we developed an LLM-driven framework that can generate and evaluate hundreds to thousands of hypotheses to guide experimental validation. The approach led to the fabrication of a new plant-based adhesive with tunable morphology and measurable shear strength, demonstrating how AI can translate biological inspiration into real materials design as a scientific co-pilot.</p>
+        <p class="project-links">
+          <a href="https://arxiv.org/abs/2508.06591" target="_blank" rel="noopener noreferrer">Paper</a>
+          <a href="https://github.com/lamm-mit/LLMsxPlants" target="_blank" rel="noopener noreferrer">Code</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img class="project-img" src="images/3d-bioinspired.png" alt="3D Bioinspired Modeling">
+      <div class="project-body">
+        <div class="project-title">3D Bioinspired Modeling <span class="project-date">2024-active</span></div>
+        <p>AI-generated 3D models of bioinspired structures for validation and printing.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-body">
+        <div class="project-title">LLM Dot <span class="project-date">2025-active</span></div>
+        <p>Custom and compact smart assistant speaker powered by LLMs. DIY for fun project c: </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="Science">
+    <h2>Science</h2>
+    <div class="project">
+      <img class="project-img" src="images/equinehoof.jpg" alt="Equine Hoof Wall Material Mechanics">
+      <div class="project-body">
+        <div class="project-title">Equine Hoof Wall Material Mechanics <span class="project-date">2020-2022</span></div>
+        <p>Fracture and impact studies of equine (horse) hoof wall.</p>
+        <p class="project-links">
+          <a href="https://www.sciencedirect.com/science/article/pii/S1742706122005050" target="_blank" rel="noopener noreferrer">Paper</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img class="project-img" src="images/lbnl-hoof.jpg" alt="LBNL Beamline">
+      <div class="project-body">
+        <div class="project-title">LBNL Beamline <span class="project-date">2022</span></div>
+        <p>Experiments at LBNL.</p>
+        <p class="project-links">
+          <a href="https://onlinelibrary.wiley.com/doi/10.1002/sstr.202200402" target="_blank" rel="noopener noreferrer">Paper</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img class="project-img" src="images/jackfruit.jpg" alt="Jackfruit Material Mechanics">
+      <div class="project-body">
+        <div class="project-title">Jackfruit Material Mechanics <span class="project-date">2021-2022</span></div>
+        <p>Fracture and impact studies of equine (horse) hoof wall.</p>
+        <p class="project-links">
+          <a href="https://www.sciencedirect.com/science/article/pii/S1742706122005050" target="_blank" rel="noopener noreferrer">Paper</a>
+        </p>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="engineering">
+    <h2>Engineering</h2>
+    <div class="project">
+      <img class="project-img" src="images/SIOdrone.png" alt="Air Sampling Drone">
+      <div class="project-body">
+        <div class="project-title">Air Sampling Drone <span class="project-date">2022</span></div>
+        <p>Mobile air sampling system for tracking of atmospheric greenhouse gases, in collaboration with the Scripps Institute of Oceanography.</p>
+        <p class="project-links">
+          <a href="https://today.ucsd.edu/story/from-sea-to-sky-students-develop-tools-for-improved-environmental" target="_blank" rel="noopener noreferrer">UC San Diego Today Feature</a>
+          <a href="https://sites.google.com/eng.ucsd.edu/mae156b-scripps-drone-measurin/home?authuser=0" target="_blank" rel="noopener noreferrer">Project Website</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img class="project-img" src="images/ocean-drifter.jpeg" alt="Ocean Drifters">
+      <div class="project-body">
+        <div class="project-title">Ocean Drifters <span class="project-date">2019</span></div>
+        <p>Low-cost floating devices for studying currents and dispersion.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img class="project-img" src="images/ergonomic-robotics.jpg" alt="Ergonomic Robotics">
+      <div class="project-body">
+        <div class="project-title">Ergonomic Robotics <span class="project-date">2019-2020</span></div>
+        <p>Robotics projects with human-centered mechanical design.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img class="project-img" src="images/rehabilitation-sensor.jpg" alt="Rehabilitation Sensor">
+      <div class="project-body">
+        <div class="project-title">Rehabilitation Sensor <span class="project-date">2018</span></div>
+        <p>Designed and prototyped a wearable medical brace to support post-surgical rehabilitation by detecting movements that could re-injure the surgical site. The device alerts users through light, vibration, and sound feedback. Led mechanical design in a 5-person team, gaining experience with Arduino, CAD, 3D printing, and physical prototyping. Presented at a showcase of 150+ attendees; awarded 3rd place out of 15+ teams.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
