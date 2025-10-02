@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About — Rachel Luu</title>
+  <!-- Inter font to match other pages -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--max-width:900px;--accent:#0366d6}
+    body{font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;max-width:var(--max-width);margin:2.5rem auto;padding:0 1rem;line-height:1.5;color:#111}
+    h1{font-size:2rem;margin-bottom:0.25rem}
+    h2{font-size:1.25rem;margin-top:2rem;border-bottom:2px solid #eee;padding-bottom:.25rem}
+    p.lead{font-size:1.05rem;color:#222}
+    .meta{color:#444;font-size:.95rem;margin-bottom:1rem}
+    .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+    ul.simple{padding-left:1rem}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.6rem;margin-top:1rem}
+    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px;cursor:pointer;display:block}
+    .small{font-size:.95rem;color:#555}
+    .cta{display:inline-block;padding:.4rem .75rem;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:600}
+    /* lightbox */
+    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.75);z-index:60}
+    .lightbox.open{display:flex}
+    .lightbox img {
+      max-width: min(90vw, 800px); /* scale for mobile, cap at 800px desktop */
+      max-height: 70vh;            /* keeps height under control */
+      border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.6);
+    }
+    .lightbox .caption{color:#fff;margin-top:.6rem;text-align:center}
+    .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+    a.inline{color:var(--accent);text-decoration:none}
+    @media (max-width:700px){.cols{grid-template-columns:1fr}.gallery img{height:110px}}
+
+    /* center lists */
+    .center-list {
+      list-style: none;
+      padding-left: 0;
+      text-align: center;
+      margin: 0 auto;
+    }
+    .center-list li {
+      margin: 0.25rem 0;
+    }
+
+    /* circular photo row */
+    .honors-photos {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .honors-photos img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div>
+      <a href="index.html" class="inline">← Home</a>
+    </div>
+  </div>
+
+  <header>
+    <div class="header-grid" style="display:grid;grid-template-columns:1fr 200px;gap:1rem;align-items:center;">
+      <div>
+        <h1>More About Rachel</h1>
+        <p class="lead"> Here you'll find more detail about my academic path, research interests, awards, and a glimpse into my life outside the lab.</p>
+      </div>
+      <div class="header-photo" style="text-align:right;">
+        <img src="media/about/rach2.png" alt="Rachel portrait" style="width:160px;height:160px;object-fit:cover;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+      </div>
+    </div>
+  </header>
+
+  <section>
+    <h2>Background</h2>
+    <p class="small">
+      I was born and raised in San Diego, California to Chinese-Vietnamese immigrant parents.
+      As a first-generation scholar, I’ve always been motivated by the opportunities
+      education and research can open, both for myself and for others.
+      My path has taken me from sunny Southern California to the charming East Coast, where I’m currently pursuing
+      my Ph.D. at MIT.
+    </p>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="cols">
+      <div>
+        <p class="small">
+          <strong>Massachusetts Institute of Technology</strong><br>
+          Ph.D. Candidate, Materials Science &amp; Engineering<br>
+          Minor in Mechanical Engineering<br>
+          <em>2022 – 2026 (expected)</em>
+        </p>
+      </div>
+      <div>
+        <p class="small">
+          <strong>University of California, San Diego</strong><br>
+          B.S. Mechanical Engineering<br>
+          Specialization in Mechanics of Materials<br>
+          <em>2018 – 2022</em>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Scholarships &amp; Fellowships </h2>
+    <p class="small">
+      I am deeply grateful for the fellowships, scholarships, and grants that have 
+      supported my journey. Each one not only enabled me to pursue my education, 
+      but also shaped who I am today. Writing them here is a way of honoring the 
+      opportunities and communities that made this path possible.
+    </p>
+    <h3 style="text-align:center;">MIT</h3>
+    <ul class="simple small center-list">
+      <li>MIT Presidential Fellowship</li>
+      <li>NSF Graduate Research Fellowship (GRFP)</li>
+      <li>MIT Generative AI Initiative</li>
+      <li>Social and Ethical Responsibilites of Computing (SERC) Scholarship</li>
+      <li>GSC Conference Travel Grant</li>
+      <li>PASC24 Student Travel Grant</li>
+    </ul>
+    <h3 style="text-align:center;">UC San Diego</h3>
+    <ul class="simple small center-list">
+      <li>Chancellor’s Scholarship Program</li>
+      <li>Academic Community for Engineering Success (ACES) Program</li>
+      <li>Ronald E. McNair Program</li>
+      <li>Loury Family Engineering Scholarship</li>
+      <li>Triton Research & Experiential Learning (TRELS) Scholarship</li>
+      <li>Alice C. Tyler (Honoring Sally Ride) Scholarship</li>
+      <li>First Generation Emerging Leader Scholarship, Circle of Change</li>
+      <li>Kiwanis Club of La Jolla Scholarship</li>
+      <li>Qualcomm San Diego STEM Scholarship</li>
+      <li>Thalia Murray Scholarship</li>
+      <li>TravelHost Scholarship</li>
+      <li>UC Blue and Gold Opportunity Plan</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Awards &amp; Honors</h2>
+    <p class="small">
+      I am thankful for the honors that have recognized my academic achievements 
+      and research contributions. Each one is a reminder of the mentors, peers, 
+      and communities that have supported me along the way.
+    </p>
+    <ul class="simple small center-list">
+      <li>Best Paper Award, MIT Department of Materials Science &amp; Engineering 2024</li>
+      <li>Best Poster Award Nominee, 2024 MRS Fall</li>
+      <li>Honorable Mention, MIT Prize for Open Data 2024</li>
+      <li>Department Award for Excellence in Mechanical and Aerospace Engineering, UCSD 2022</li>
+      <li>Tri Alpha First Generation Honors Society, 2022</li>
+      <li>People's Choice Poster Award, LSMRCE Research Conference 2020</li>
+      <li>Provost Honors, UCSD</li>
+    </ul>
+    <div class="honors-photos">
+      <img src="media/about/dept-award.png" alt="MAE Department Award" />
+      <img src="media/about/dept-award2.png" alt="MAE Department Award" />
+      <img src="media/about/mrs-poster.png" alt="MRS Award"/>
+      <img src="media/about/lsmrce-award.png" alt="LSMRCE Award"/>
+    </div>
+  </section>
+
+    <section>
+    <h2>Media & Features</h2>
+    <p class="small">
+        A few places where my work (and younger self) have shown up.  
+        <em>Disclaimer: I am not liable for anything I said when I was 19.</em>
+    </p>
+    <ul class="simple small center-list">
+        <li>
+        <a href="https://oge.mit.edu/ambassador/rachel-luu/" target="_blank" rel="noopener noreferrer">
+            MIT Office of Graduate Education Ambassador Profile
+        </a>
+        </li>
+        <li>
+        <a href="https://today.ucsd.edu/story/class-of-2022-outstanding-grads" target="_blank" rel="noopener noreferrer">
+            UC San Diego Today: Class of 2022 Outstanding Grads
+        </a>
+        </li>
+        <li>
+        <a href="https://jacobsschoolofengineering.blogspot.com/2022/06/2022-mechanical-and-aerospace.html" target="_blank" rel="noopener noreferrer">
+            Jacobs School of Engineering: 2022 Mechanical and Aerospace Engineering Department Award of Excellence: Rachel Luu
+        </a>
+        </li>
+        <li>
+        <a href="https://jacobsschool.ucsd.edu/sites/default/files/2021-02/Rachel_Luu_-_Spotlight.pdf" target="_blank" rel="noopener noreferrer">
+            Jacobs School of Engineering IDEA Center Spotlight - Rachel Luu
+        </a>
+        </li>
+    </ul>
+    </section>
+
+  <section>
+    <h2>Gallery</h2>
+    <p class="small">Click any image to enlarge.</p>
+    <div class="gallery" id="gallery">
+      <img src="media/about/rach.png" alt="Portrait — Rachel" data-caption="Portrait — Rachel">
+      <img src="media/about/IMG_2345.png" alt="Lab setup" data-caption="Lab setup">
+      <img src="media/about/IMG_5305.png" alt="Beamline" data-caption="Beamline experiment">
+      <img src="media/about/LAMM-group.png" alt="Group photo" data-caption="LAMM group">
+      <img src="media/about/IMG_0964.png" alt="Fieldwork" data-caption="Fieldwork">
+      <img src="media/about/IMG_2812.png" alt="Microscopy" data-caption="Microscopy">
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p class="small">Let's chat. rluu(at)mit.edu.</p>
+  </section>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div>
+      <img id="lightbox-img" src="" alt="">
+      <div class="caption" id="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <script>
+    // Simple lightbox: opens clicked image in modal
+    (function(){
+      const gallery = document.getElementById('gallery');
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      const lbCaption = document.getElementById('lightbox-caption');
+      gallery.addEventListener('click', e => {
+        const img = e.target.closest('img');
+        if (!img) return;
+        lbImg.src = img.src;
+        lbImg.alt = img.alt || '';
+        lbCaption.textContent = img.dataset.caption || img.alt || '';
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden','false');
+      });
+      lb.addEventListener('click', e => {
+        if (e.target === lb || e.target === lbImg) {
+          lb.classList.remove('open');
+          lb.setAttribute('aria-hidden','true');
+          lbImg.src = '';
+        }
+      });
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') { lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; } });
+    })();
+  </script>
+</body>
+</html>
