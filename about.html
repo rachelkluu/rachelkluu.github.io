@@ -8,89 +8,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root{--max-width:900px;--accent:#0366d6}
-    body{font-family:'Inter',system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;max-width:var(--max-width);margin:2.5rem auto;padding:0 1rem;line-height:1.5;color:#111}
-    h1{font-size:2rem;margin-bottom:0.25rem}
-    h2{font-size:1.25rem;margin-top:2rem;border-bottom:2px solid #eee;padding-bottom:.25rem}
-    p.lead{font-size:1.05rem;color:#222}
-    .meta{color:#444;font-size:.95rem;margin-bottom:1rem}
-    .cols{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
-    ul.simple{padding-left:1rem}
-    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:0.6rem;margin-top:1rem}
-    .gallery img{width:100%;height:120px;object-fit:cover;border-radius:8px;cursor:pointer;display:block}
-    .small{font-size:.95rem;color:#555}
-    .cta{display:inline-block;padding:.4rem .75rem;background:var(--accent);color:white;border-radius:8px;text-decoration:none;font-weight:600}
-    /* lightbox */
-    .lightbox{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.75);z-index:60}
-    .lightbox.open{display:flex}
-    .lightbox img {
-      max-width: min(90vw, 800px); /* scale for mobile, cap at 800px desktop */
-      max-height: 70vh;            /* keeps height under control */
-      border-radius: 6px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.6);
-    }
-    .lightbox .caption{color:#fff;margin-top:.6rem;text-align:center}
-    .topbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
-    a.inline{color:var(--accent);text-decoration:none}
-    @media (max-width:700px){.cols{grid-template-columns:1fr}.gallery img{height:110px}}
-
-    /* center lists */
-    .center-list {
-      list-style: none;
-      padding-left: 0;
-      text-align: center;
-      margin: 0 auto;
-    }
-    .center-list li {
-      margin: 0.25rem 0;
-    }
-
-    /* circular photo row */
-    .honors-photos {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .honors-photos img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="topbar">
-    <div>
-      <a href="index.html" class="inline">← Home</a>
-    </div>
-  </div>
+<body class="page-about">
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link" aria-current="page">About</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+    </nav>
+  </header>
 
   <header>
     <div class="header-grid" style="display:grid;grid-template-columns:1fr 200px;gap:1rem;align-items:center;">
       <div>
-        <h1>More About Rachel</h1>
+  <h1 style="text-align:center;">More About Rachel</h1>
       </div>
       <div class="header-photo" style="text-align:right;">
-        <img src="media/about/rach2.png" alt="Rachel portrait" style="width:160px;height:160px;object-fit:cover;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.12);">
+        <img class="lightboxable header-img" src="media/about/rach2.png" alt="Rachel portrait" data-caption="Rachel Luu" style="width:200px;height:200px;object-fit:cover;border-radius:50%;box-shadow:0 8px 24px rgba(0,0,0,0.16);cursor:pointer;">
       </div>
     </div>
   </header>
 
-  <section>
-    <h2>Background</h2>
-    <p class="small">
-      I was born and raised in the heart of San Diego, California to Chinese-Vietnamese immigrant parents.
-      As a first-generation scholar, I’ve always been motivated by the opportunities
-      education and research can open, both for myself and for others.
-      My path has taken me from sunny Southern California to the charming East Coast, where I’m currently pursuing
-      my Ph.D. at MIT.
-    </p>
-  </section>
+<section>
+  <h2>Background</h2>
+  <p class="small">
+    I was born and raised in the heart of San Diego, California to Chinese-Vietnamese immigrant parents. 
+    Growing up between cultures taught me to see the world through many lenses, a perspective that continues 
+    to shape how I approach science and creativity. As a first-generation scholar, I have always been motivated 
+    by the opportunities that education and research can open, both for myself and for others. My path has taken 
+    me from sunny Southern California to the charming East Coast, where I am now pursuing my Ph.D. at MIT.
+  </p>
+</section>
+
 
   <section>
     <h2>Education</h2>
@@ -151,7 +101,7 @@
   <section>
     <h2>Awards &amp; Honors</h2>
     <p class="small">
-      I am thankful for the honors that have recognized my academic achievements 
+      I am also thankful for the honors that have recognized my academic achievements 
       and research contributions. Each one is a reminder of the mentors, peers, 
       and communities that have supported me along the way.
     </p>
@@ -165,10 +115,10 @@
       <li>Provost Honors, UCSD</li>
     </ul>
     <div class="honors-photos">
-      <img src="media/about/dept-award.png" alt="MAE Department Award" />
-      <img src="media/about/dept-award2.png" alt="MAE Department Award" />
-      <img src="media/about/mrs-poster.png" alt="MRS Award"/>
-      <img src="media/about/lsmrce-award.png" alt="LSMRCE Award"/>
+      <img class="lightboxable" src="media/about/dept-award.png" alt="MAE Department Award" data-caption="MAE Department Award" />
+      <img class="lightboxable" src="media/about/dept-award2.png" alt="MAE Department Award" data-caption="MAE Department Award" />
+      <img class="lightboxable" src="media/about/mrs-poster.png" alt="MRS Award" data-caption="MRS Award"/>
+      <img class="lightboxable" src="media/about/lsmrce-award.png" alt="LSMRCE Award" data-caption="LSMRCE Award"/>
     </div>
   </section>
 
@@ -202,43 +152,56 @@
     </ul>
     </section>
 
-    <section>
+  <section id="outside-lab">
     <h2>Outside the Lab</h2>
     <p class="small">
-        Hobbies, interests, and whatnot
+      When I’m not working, I’m usually out exploring, cooking, or hosting something.
     </p>
     <ul class="simple small center-list">
-        <li>
-        Party Hosting (all kinds! dinner parties, themed parties, game nights, etc.)
-        </li>
-        <li>
-        Home Cooking (check out my homecooking instagram page: @rachel.food.luu)
-        </li>
-        <li>
-        Camping & All Things Nature
-        </li>
-        <li>
-        Music & Concerts (collecting vinyl records and going to live shows, my favorite genres are alternative and midwest emo!)
-        </li>
+      <li>🎉 <strong>Party Hosting</strong> — dinner parties, themed gatherings, game nights, and making sure everyone is well fed are my love language</li>
+      <li>🍳 <strong>Home Cooking</strong> — I run a small food Instagram (<a href="https://www.instagram.com/rachel.food.luu" target="_blank">@rachel.food.luu</a>), where I post my chaotic kitchen experiments</li>
+      <li>🏕️ <strong>Camping & Nature</strong> — I’ve camped in every state in New England and am slowly working my way across the U.S. and abroad</li>
+      <li>🎶 <strong>Music & Concerts</strong> — I’ve seen over 200 bands live (and counting); my favorite genre is midwest emo and my favorite bands are Turnstile and Joyce Manor :)</li>
+      <li>🖋️ <strong>Art & Design</strong> — block printing, leather working, film photography, with an appreciation and collection of all things art; fun fact: I have twelve tattoos</li>
+      <li>🕹️ <strong>Tech & Play</strong> — grew up on sandbox, RPG, and life-sim games; still love building, modding, and tinkering with digital worlds</li>
     </ul>
-    </section>
-
-  <section>
-    <h2>Gallery</h2>
-    <p class="small">Click any image to enlarge.</p>
-    <div class="gallery" id="gallery">
-      <img src="media/about/rach.png" alt="Portrait — Rachel" data-caption="Portrait — Rachel">
-      <img src="media/about/IMG_2345.png" alt="Lab setup" data-caption="Lab setup">
-      <img src="media/about/IMG_5305.png" alt="Beamline" data-caption="Beamline experiment">
-      <img src="media/about/LAMM-group.png" alt="Group photo" data-caption="LAMM group">
-      <img src="media/about/IMG_0964.png" alt="Fieldwork" data-caption="Fieldwork">
-      <img src="media/about/IMG_2812.png" alt="Microscopy" data-caption="Microscopy">
-    </div>
   </section>
+
+
+
+
+<section>
+  <h2>Gallery</h2>
+  <p class="small">
+    A few snapshots with incredible people and communities I’ve been lucky to be part of!
+  </p>
+  <div class="gallery" id="gallery">
+    <img class="lightboxable" src="media/about/LAMM-group.png" alt="LAMM Group" data-caption="Laboratory of Atomistic and Molecular Mechanics, MIT">
+    <img class="lightboxable" src="media/about/dmse-group.png" alt="DMSE" data-caption="Womxn of Materials Science, MIT">
+    <img class="lightboxable" src="media/about/UCSD.png" alt="UCSD" data-caption="Engineering besties at UCSD">
+    <img class="lightboxable" src="media/about/jesse-rach.png" alt="Jesse" data-caption="My fiancé and I just after gettig engaged in Switzerland">
+    <img class="lightboxable" src="media/about/CSP-heartsandscholars.png" alt="CSP" data-caption="UCSD Chancellor's Scholars at Hearts & Scholars">
+    <img class="lightboxable" src="media/about/Meyers-group.png" alt="Meyers" data-caption="Marc Meyers Research Group, UCSD">
+    <img class="lightboxable" src="media/about/MamaLuu.png" alt="Mama" data-caption="My mom and me, at MIT, which she didn't know what MIT was when I first got in">
+    <img class="lightboxable" src="media/about/fam.png" alt="Family" data-caption="My incredible family! Older sister, older brother, their significant others, and my nephew, Kai.">
+    <img class="lightboxable" src="media/about/RachBDay.png" alt="BDay" data-caption="My awesome East Coast friends celebrating my birthday on a barn/camping trip">
+    <img class="lightboxable" src="media/about/CSP-retreat.png" alt="CSP Retreat" data-caption="Black Canyon Canoe Retreat with UCSD Chancellor's Scholars">
+    <img class="lightboxable" src="media/about/PF-team.png" alt="PF" data-caption="Team at the IDEA Engineering Student Center, UCSD">
+    <img class="lightboxable" src="media/about/DMSE-cohort.png" alt="DMSE cohort" data-caption="Cohort at DMSE, MIT">
+    <img class="lightboxable" src="media/about/LAMM-BBQ.png" alt="LAMM BBQ" data-caption="Laboratory of Atomistic and Molecular Mechanics, BBQ">
+  </div>
+</section>
+
 
   <section>
     <h2>Contact</h2>
-    <p class="small">Let's chat. rluu(at)mit.edu.</p>
+    <p class="small">Let’s chat! Feel free to reach out at rluu(at)mit.edu.</p>
+      <p class="links">
+    💻 <a href="https://github.com/rachelkluu" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+    🤗 <a href="https://huggingface.co/rachelkluu" target="_blank" rel="noopener noreferrer">Hugging Face</a> ·
+    💼 <a href="https://www.linkedin.com/in/rachelluu00" target="_blank" rel="noopener noreferrer">LinkedIn</a> ·
+    📚 <a href="https://scholar.google.com/citations?user=D1Gewq4AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+ </p>
   </section>
 
   <!-- Lightbox modal -->
@@ -247,32 +210,54 @@
       <img id="lightbox-img" src="" alt="">
       <div class="caption" id="lightbox-caption"></div>
     </div>
+   <button id="lightbox-close" class="lightbox-close" aria-label="Close">✕</button>
   </div>
 
   <script>
-    // Simple lightbox: opens clicked image in modal
+    // Generic lightbox: opens any image with class "lightboxable" in the modal.
     (function(){
-      const gallery = document.getElementById('gallery');
       const lb = document.getElementById('lightbox');
       const lbImg = document.getElementById('lightbox-img');
       const lbCaption = document.getElementById('lightbox-caption');
-      gallery.addEventListener('click', e => {
-        const img = e.target.closest('img');
-        if (!img) return;
-        lbImg.src = img.src;
+      const lbClose = document.getElementById('lightbox-close');
+
+      function closeLightbox() {
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden','true');
+        lbImg.src = '';
+      }
+
+      function openLightbox(img) {
+        lbImg.src = img.dataset.highres || img.src;
         lbImg.alt = img.alt || '';
         lbCaption.textContent = img.dataset.caption || img.alt || '';
         lb.classList.add('open');
         lb.setAttribute('aria-hidden','false');
-      });
-      lb.addEventListener('click', e => {
-        if (e.target === lb || e.target === lbImg) {
-          lb.classList.remove('open');
-          lb.setAttribute('aria-hidden','true');
-          lbImg.src = '';
+      }
+
+      // delegate clicks for any image with the lightboxable class
+      document.addEventListener('click', e => {
+        const img = e.target.closest('img.lightboxable');
+        if (img) {
+          openLightbox(img);
+          e.preventDefault();
+          return;
+        }
+
+        // If the click is on the backdrop (lb), the explicit close button, or
+        // anywhere inside the lightbox that is not the enlarged image, close it.
+        // This ensures clicking the side of the photo or caption closes the modal.
+        const clickedInsideLightbox = !!e.target.closest('#lightbox');
+        const clickedImage = !!e.target.closest('#lightbox img');
+        const clickedClose = e.target === lbClose || e.target.closest('.lightbox-close');
+
+        if (e.target === lb || clickedClose || (clickedInsideLightbox && !clickedImage)) {
+          closeLightbox();
         }
       });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape') { lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; } });
+
+      // esc to close
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLightbox(); } });
     })();
   </script>
 </body>

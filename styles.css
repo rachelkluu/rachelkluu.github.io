@@ -1,0 +1,379 @@
+/* Shared styles for Rachel Luu's website */
+:root {
+  --max-width: 900px;
+  --accent: #0366d6;
+}
+
+/* Base layout & typography */
+body {
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  max-width: var(--max-width);
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+  line-height: 1.5;
+  color: #111;
+}
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+h2 {
+  font-size: 1.25rem;
+  margin-top: 1.5rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.25rem;
+}
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Small helpers */
+.small {
+  font-size: 0.95rem;
+  color: #555;
+}
+p.lead {
+  font-size: 1.05rem;
+  color: #222;
+}
+
+/* Site header/nav styles */
+.site-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.nav-link {
+  padding: 0.45rem 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 600;
+}
+.nav-link[aria-current="page"] {
+  background: rgba(3, 102, 214, 0.08);
+}
+
+/* Narrow the content on the home page only */
+body.page-index {
+  max-width: 700px; /* narrower text box for home */
+}
+
+/* Adjust profile image on home page */
+img.profile {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 200px; /* bumped up */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Two-column layout utility used on About page (education section) */
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+@media (max-width: 700px) {
+  .cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Centered, no-bullets lists used for Scholarships & Awards */
+.center-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 680px; /* keep lines readable */
+}
+.center-list li {
+  margin: 0.25rem 0;
+}
+
+/* Honors / circular photos: center and size smaller */
+.honors-photos {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+.honors-photos img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.honors-photos img:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(0,0,0,0.22); }
+
+/* Gallery grid: smaller thumbnails, consistent across about/gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+/* Thumbnail images used in gallery and thumbnails across pages */
+.gallery img,
+.img-thumb,
+.project-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* lightboxable affordance */
+img.lightboxable {
+  cursor: pointer;
+  outline: none;
+}
+
+/* Lightbox modal (shared) */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  padding: 1rem; /* breathing room on small screens */
+}
+.lightbox.open { display: flex; }
+
+/* inner container keeps caption and image centered and constrained */
+.lightbox > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .6rem;
+  max-width: 98vw;
+  width: 100%;
+}
+
+.lightbox img {
+  width: auto;
+  height: auto;
+  max-width: min(96vw, 1600px);
+  max-height: 94vh;
+  border-radius: 8px;
+  box-shadow: 0 20px 56px rgba(0,0,0,.7);
+}
+.lightbox .caption {
+  color: #fff;
+  margin-top: .2rem;
+  text-align: center;
+  max-width: 95vw;
+}
+
+/* Lightbox close button */
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.12); transform: translateY(-2px); }
+
+/* Increase tap target on small screens */
+@media (max-width:480px){
+  .lightbox-close { width: 48px; height:48px; font-size:22px; top: 0.75rem; right:0.75rem }
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  body {
+    margin: 1.5rem auto;
+  }
+  .site-nav {
+    gap: 0.5rem;
+  }
+}
+
+/* Project page specific styles (scoped to avoid affecting other pages) */
+.page-projects nav:not(.site-nav) {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  margin: 0.75rem 0 1.25rem 0;
+  flex-wrap: wrap;
+}
+
+.page-projects nav:not(.site-nav) a {
+  display: inline-block;
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  background: rgba(3,102,214,0.08);
+  color: #033e8c;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid rgba(3,102,214,0.12);
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+.page-projects nav:not(.site-nav) a:hover,
+.page-projects nav:not(.site-nav) a:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(3,102,214,0.12);
+  background: rgba(3,102,214,0.14);
+}
+
+/* Slightly more vertical spacing between projects */
+.page-projects .project {
+  margin-bottom: 2rem; /* increased spacing */
+}
+
+/* Make section anchors land below the header reliably */
+.page-projects section {
+  scroll-margin-top: 110px; /* gives space so headings are visible after jump */
+}
+
+/* Improve active/focus states for top category buttons */
+.page-projects nav:not(.site-nav) a:active,
+.page-projects nav:not(.site-nav) a:focus,
+.page-projects nav:not(.site-nav) a[aria-pressed="true"] {
+  outline: none;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(3,102,214,0.14);
+  background: rgba(3,102,214,0.18);
+}
+
+/* Ensure nav buttons are keyboard-focus visible */
+.page-projects nav:not(.site-nav) a:focus-visible {
+  box-shadow: 0 0 0 4px rgba(3,102,214,0.12);
+}
+
+/* Project rows: photo column + text column */
+.page-projects .project {
+  display: flex;
+  gap: 1.25rem; /* slightly larger gap */
+  align-items: flex-start;
+  margin-bottom: 1.25rem;
+}
+
+.page-projects .project-img {
+  width: 160px; /* larger than before */
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex: 0 0 160px;
+  background: #f6f7f8;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+.page-projects .project-img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+}
+
+.page-projects .project-body {
+  flex: 1 1 auto;
+}
+
+.page-projects .project-title {
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+}
+
+/* Project date styling (smaller, muted) */
+.page-projects .project-date {
+  font-size: 0.85rem;
+  color: #6b7280; /* cool gray */
+  font-weight: 500;
+  margin-left: 0.5rem;
+  align-self: center;
+}
+
+/* Make section headers on Projects page more prominent */
+.page-projects h2 {
+  font-size: 1.4rem;
+  margin-top: 1.75rem;
+  letter-spacing: 0.6px;
+  color: #0b2f66;
+}
+
+/* Style project action links (paper, weights, etc.) as buttons */
+.page-projects .project-links {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.page-projects .project-links a {
+  font-size: 0.9rem;
+  color: white;
+  background: var(--accent);
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 18px rgba(3,102,214,0.12);
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+.page-projects .project-links a:hover,
+.page-projects .project-links a:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(3,102,214,0.18);
+  background: #024e9a;
+}
+
+/* Project team line styling (scoped to Projects page) */
+.page-projects .project-team {
+  font-size: 0.9rem;
+  color: #6b7280; 
+  margin-top: 0.75rem; 
+  font-style: normal;
+}
+.page-projects .project-team strong {
+  font-weight: 400; 
+  color: #111;
+  margin-right: 0.4rem;
+}
+
+/* Responsive: stack on small screens */
+@media (max-width: 700px) {
+  .page-projects .project {
+    flex-direction: column;
+  }
+  .page-projects .project-img {
+    width: 100%;
+    height: auto;
+    flex: none;
+  }
+}

@@ -8,115 +8,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      line-height: 1.6;
-    }
-    h1 {
-      font-size: 2em;
-      margin-bottom: 1rem;
-      text-align: center;
-    }
-    nav {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    nav a {
-      display: inline-block;
-      margin: 0 0.5rem;
-      padding: 0.75rem 1.25rem; /* larger, more clickable */
-      border: 1px solid rgba(3,102,214,0.15);
-      border-radius: 8px;
-      text-decoration: none;
-      color: #033e8c;
-      font-size: 1.05em;
-      font-weight: 600;
-      background: rgba(3,102,214,0.06);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-      transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
-    }
-    nav a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(3,102,214,0.12);
-      background: rgba(3,102,214,0.12);
-    }
-    section {
-      margin-bottom: 3rem;
-    }
-    h2 {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.25rem;
-      margin-top: 2rem;
-    }
-    .project {
-      margin-bottom: 1.25rem;
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-    }
-    .project-img {
-      width: 160px;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 8px;
-      flex: 0 0 160px;
-      background: #f6f7f8; /* placeholder background if image missing */
-    }
-    .project-body {
-      flex: 1 1 auto;
-    }
-    .project-title {
-      font-weight: 700;
-      margin: 0 0 0.25rem 0;
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-    }
-    .project-date {
-      font-size: 0.85em;
-      color: #666;
-      font-weight: 500;
-    }
-    .project-links {
-      margin-top: 0.5rem;
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-    .project-links a {
-      font-size: 0.9em;
-      color: #0366d6;
-      text-decoration: none;
-      padding: 0.25rem 0.5rem;
-      border-radius: 6px;
-      background: rgba(3,102,214,0.04);
-      border: 1px solid rgba(3,102,214,0.06);
-    }
-    .project-links a:hover {
-      background: rgba(3,102,214,0.12);
-      transform: translateY(-1px);
-    }
-    @media (max-width: 600px) {
-      .project {
-        flex-direction: column;
-      }
-      .project-img {
-        width: 100%;
-        height: auto;
-        flex: none;
-      }
-    }
-    .project-title {
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-projects">
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="projects.html" class="nav-link" aria-current="page">Projects</a>
+    </nav>
+  </header>
+
   <h1>Projects</h1>
 
   <!-- Navigation Buttons -->
@@ -134,6 +36,7 @@
       <div class="project-body">
         <div class="project-title">BioinspiredLLM <span class="project-date">2022-2023</span></div>
         <p>A domain-specialized large language model fine-tuned on text/data mined bioinspired materials literature. Built with a LoRA strategy and a synthetic Q&A dataset, it excels at knowledge retrieval, hypothesis generation, and exploring agentic approaches to new material design.</p>
+        <div class="project-team">Team: Markus Buehler</div>
         <p class="project-links">
           <a href="https://doi.org/10.1002/advs.202306724" target="_blank" rel="noopener noreferrer">Paper</a>
           <a href="https://huggingface.co/collections/lamm-mit/bioinspired-llms-66a382d6eff6c13fda589886" target="_blank" rel="noopener noreferrer">Weights</a>
@@ -146,6 +49,7 @@
       <div class="project-body">
         <div class="project-title">LLMs to Real World Experiment: Plant Materials <span class="project-date">2024-2025</span></div>
         <p>A project bridging LLM-generated ideas to real-world experiments. Using Hierarchical Sampling, an LLM-driven framework generates and evaluates hundreds of hypotheses to guide experimental validation. This approach enabled the fabrication of a plant-based adhesive with tunable morphology and measurable shear strength, demonstrating AI’s role as a scientific co-pilot for materials design.</p>
+        <div class="project-team">Team: Jingyu Deng, Mohammed Shahrudin Ibrahim, Nam-Joon Cho, Ming Dao, Subra Suresh, Markus Buehler</div>
         <p class="project-links">
           <a href="https://arxiv.org/abs/2508.06591" target="_blank" rel="noopener noreferrer">Paper</a>
           <a href="https://github.com/lamm-mit/LLMsxPlants" target="_blank" rel="noopener noreferrer">Code</a>
@@ -158,6 +62,7 @@
       <div class="project-body">
         <div class="project-title">Exploring LLM Finetuning Strategies: CPT, SFT, DPO, ORPO, Merging<span class="project-date">2023-2025</span></div>
         <p>A systematic investigation of strategies to adapt large language models (LLMs) for domain-specific applications in materials science and engineering. Through experiments with continued pretraining, supervised fine-tuning, and preference optimization methods such as DPO and ORPO, as well as model merging, the study revealed how different training strategies influence model performance.</p>
+        <div class="project-team">Team: Wei Lu, Markus Buehler</div>
         <p class="project-links">
           <a href="https://doi.org/10.1038/s41524-025-01564-y" target="_blank" rel="noopener noreferrer">Paper</a>
         </p>
@@ -169,6 +74,7 @@
       <div class="project-body">
         <div class="project-title">De Novo Chemical Designs using Diffusion and Transformers Models <span class="project-date">2022-2023</span></div>
         <p>Deep learning models for forward and inverse molecular design(SMILES), applying diffusion modeling and transformer architectures to capture complex chemical structures. Trained on the QM9 dataset and extended to deep eutectic solvents (DESs), the models were capable of predicting quantum mechanical properties and designing solvent systems with targeted behaviors.</p>
+        <div class="project-team">Team: Marcin Wysokowski, Markus Buehler</div>
         <p class="project-links">
           <a href="https://doi.org/10.1063/5.0155890" target="_blank" rel="noopener noreferrer">Paper</a>
         </p>
@@ -180,6 +86,7 @@
       <div class="project-body">
         <div class="project-title">3D Bioinspired Modeling <span class="project-date">2024-active</span></div>
         <p>AI-generated 3D models of bioinspired structures for validation and printing.</p>
+        <div class="project-team">Team: Markus Buehler</div>
       </div>
     </div>
 
@@ -200,6 +107,7 @@
       <div class="project-body">
         <div class="project-title">Equine Hoof Wall Material Mechanics and Bioinspired Designs<span class="project-date">2020-2022</span></div>
         <p>Horse hooves endure daily impact with surprising toughness. This project investigated the fracture and impact mechanics of the equine hoof wall through experiments, simulations, and advanced imaging, and extended those findings into 3D-printed composites. The results uncovered new crack deflection mechanisms that point toward future bioinspired materials.</p>
+        <div class="project-team">Team: Benjamin Lazarus, Wendell Bezerra, Kevin Becerra-Santamaria, Victor Leung, Victor Hugo Lopez Durazo, Iwona Jasiuk, Josiane Barbosa, Marc Meyers</div>
         <p class="project-links">
           <a href="https://www.sciencedirect.com/science/article/pii/S1742706122005050" target="_blank" rel="noopener noreferrer">Paper</a>
         </p>
@@ -211,6 +119,7 @@
       <div class="project-body">
         <div class="project-title">4D Micro-CT of the Equine Hoof Wall <span class="project-date">2022</span></div>
         <p>What happens inside a horse hoof when it’s pushed to its limits? Using 4D synchrotron micro-CT at Berkeley Lab(LBNL), this project visualized the hoof wall’s structural changes under mechanical loading, uncovering how its architecture adapts and fractures in real time.</p>
+        <div class="project-team">Team: Benjamin Lazarus, Samuel Ruiz-Pérez, Josiane Barbosa, Iwona Jasiuk, Marc Meyers</div>
         <p class="project-links">
           <a href="https://onlinelibrary.wiley.com/doi/10.1002/sstr.202200402" target="_blank" rel="noopener noreferrer">Paper</a>
         </p>
@@ -222,6 +131,7 @@
       <div class="project-body">
         <div class="project-title">Jackfruit Material Mechanics and Bioinspired Designs<span class="project-date">2021-2022</span></div>
         <p>Jackfruit, the largest fruit on Earth, has a peel that doubles as a natural armor. This project examined its cellular and fibrous architecture through experiments and imaging, uncovering how the structure resists impact and fracture. The findings offer inspiration for designing lightweight, bioinspired protective materials.</p>
+        <div class="project-team">Team: Benjamin Lazarus, Victor Leung, Matthew Wong, Samuel Ruiz-Pérez, Willams Barbosa, Wendell Bezerra, Josiane Barbosa, Marc Meyers</div>
         <p class="project-links">
           <a href="https://www.sciencedirect.com/science/article/pii/S1742706122005050" target="_blank" rel="noopener noreferrer">Paper</a>
         </p>
@@ -238,6 +148,7 @@
       <div class="project-body">
         <div class="project-title">Air Sampling Drone <span class="project-date">2022</span></div>
         <p>A mobile air sampling system for atmospheric greenhouse gas tracking for the Scripps Institution of Oceanography. A custom 3D-printed carbon-fiber fixture positioned the sampling inlet below the drone rotors for well-mixed air collection, with tubing secured to prevent stress on the mount. A Raspberry Pi, sensors, and an external battery pack were housed in a protective acrylic fixture mounted on top of the drone, enabling real-time communication.</p>
+        <div class="project-team">Team: Colleen Wolfe, Rhianne Purificacion, Tristan Kinney</div>
         <p class="project-links">
           <a href="https://today.ucsd.edu/story/from-sea-to-sky-students-develop-tools-for-improved-environmental" target="_blank" rel="noopener noreferrer">UC San Diego Today Feature</a>
           <a href="https://sites.google.com/eng.ucsd.edu/mae156b-scripps-drone-measurin/home?authuser=0" target="_blank" rel="noopener noreferrer">Project Website</a>
@@ -250,6 +161,7 @@
       <div class="project-body">
         <div class="project-title">Ocean Drifters <span class="project-date">2019</span></div>
         <p>Six low-cost ocean drifters, designed and built for deployment in Hawaii, tracked currents and dispersion over time. Iterative prototyping and fabrication ensured proper buoyancy and reliable performance in the field.</p>
+        <div class="project-team">Team: Colleen Wolfe</div>
       </div>
     </div>
 
@@ -258,6 +170,7 @@
       <div class="project-body">
         <div class="project-title">Robotic Arm<span class="project-date">2019</span></div>
         <p>Wouldn't be an engineering degree without building a robot right? This robotic arm combined a rotating friction-drive base with a claw gripper capable of handling oddly shaped small objects. The base design provided a high torque ratio, while the gripper enabled smooth and precise operation.</p>
+        <div class="project-team">Team: Rhianne Purificacion, Nhat Tang, Alex Young</div>
       </div>
     </div>
 
@@ -266,6 +179,7 @@
       <div class="project-body">
         <div class="project-title">Birch Energy Model<span class="project-date">2018-2019</span></div>
         <p>A comprehensive energy model of the Birch Aqauarium(La Jolla, CA) using eQUEST. Our work included conducting site tours, performing lighting counts, evaluating HVAC systems, and developing CAD building layouts.</p>
+        <div class="project-team">Team: Leanne Kao, Kailyn Scott, Irene Sha, Nico Botezatu, Isabel Cushman, Maxwell Ober, Sydney Huynh</div>
       </div>
     </div>
 
@@ -274,6 +188,7 @@
       <div class="project-body">
         <div class="project-title">I Need Space: Modular Board Game<span class="project-date">2019</span></div>
         <p>This immersive tabletop game is built from modular 3D-printed tiles, so the board can be redesigned every time you play. Set in a post-apocalyptic future, players navigate a layered system of rewards, punishments, and karma points. Beneath the fun, the game hints at larger questions about survival, community, and the choices we make under pressure.</p>
+        <div class="project-team">Team: Jesse de Alva, Gillian McMahon, Dashiell Thumm</div>
       </div>
     </div>
 
@@ -281,7 +196,8 @@
       <img class="project-img" src="media/projects/bodyguard-device.png" alt="Rehabilitation Sensor">
       <div class="project-body">
         <div class="project-title">Rehabilitation Sensor <span class="project-date">2018</span></div>
-        <p>A wearable medical brace to support post-surgical rehabilitation by detecting movements that could re-injure the surgical site. The device alerts users through light, vibration, and sound feedback.
+        <p>A wearable medical brace to support post-surgical rehabilitation by detecting movements that could re-injure the surgical site. The device alerts users through light, vibration, and sound feedback.</p>
+        <div class="project-team">Team: Ivy Chan, Vivian Chiong, Rhianne Purificacion, Colleen Wolfe</div>
       </div>
     </div>
   </section>
