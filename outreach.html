@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Outreach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page-outreach">
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="outreach.html" class="nav-link" aria-current="page">Outreach</a>
+    </nav>
+  </header>
+
+  <h1>Outreach</h1>
+
+  <p class="small">I’m grateful for the support I’ve received throughout my education and career, and I aim to pay that forward by supporting communities particularly those that are historically underserved and underrepresented.</p>
+
+  <section id="events">
+    <h2>Graduate School & Fellowship Application Assistance</h2>
+     <p>I volunteer with MIT’s Application Assistance Program to support students applying to graduate school. Having gone through the process myself—earning the NSF GRFP and admission offers from MIT, Stanford, Caltech, and UC Berkeley—I understand how challenging it can be to find your voice in an application. Beyond formal programs, I’ve also mentored friends and undergraduates one-on-one and am always happy to provide informal guidance to anyone who might benefit from it.</p>
+    
+    <h2>UCSD: IDEA Engineering Student Center</h2>
+      <div class="project-body">
+        <div class="project-title">Summer Engineering Institute/Summer Prep Peer Facilitator <span class="project-date">2019, 2020</span></div>
+        <p>At UC San Diego’s Jacobs School of Engineering, I served as a Peer Facilitator and later as a Lead Peer Facilitator for the Summer Engineering Institute and Freshman Summer Prep programs, which support incoming engineering students in their transition to college. (I first joined SEI myself in 2018 as an ACES Scholar.) In these roles, I provided academic, personal, and logistical support to cohorts ranging from 120 to 400 students. I also mentored participants individually and in groups, led a team of facilitators, and helped adapt the program to a fully remote format during 2020. Across both years, I designed and led community-building activities that fostered collaboration, confidence, and a strong sense of belonging in engineering.</p>        
+        <div class="outreach-photos">
+          <img class="lightboxable" src="media/outreach/PF-group.png" alt="SEI" data-caption="SEI PFs, 2019">
+          <img class="lightboxable" src="media/outreach/PF-sign.png" alt="SEI" data-caption="SEI PFs, 2019">
+          <img class="lightboxable" src="media/outreach/PF-pie.png" alt="SEI" data-caption="SEI PF Pie Event">
+          <img class="lightboxable" src="media/outreach/PF-SP-group.png" alt="SP" data-caption="SP PFs, 2020">
+        </div>
+        <p class="project-links">
+        
+        </p>
+      </div>
+    </div>
+
+
+  <!-- Lightbox modal (shared pattern) -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div>
+      <img id="lightbox-img" src="" alt="">
+      <div class="caption" id="lightbox-caption"></div>
+    </div>
+    <button id="lightbox-close" class="lightbox-close" aria-label="Close">✕</button>
+  </div>
+
+  <script>
+    (function(){
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      const lbCaption = document.getElementById('lightbox-caption');
+      const lbClose = document.getElementById('lightbox-close');
+
+      function closeLightbox() {
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden','true');
+        lbImg.src = '';
+      }
+
+      function openLightbox(img) {
+        lbImg.src = img.dataset.highres || img.src;
+        lbImg.alt = img.alt || '';
+        lbCaption.textContent = img.dataset.caption || img.alt || '';
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden','false');
+      }
+
+      document.addEventListener('click', e => {
+        const img = e.target.closest('img.lightboxable');
+        if (img) { openLightbox(img); e.preventDefault(); return; }
+
+        const clickedInsideLightbox = !!e.target.closest('#lightbox');
+        const clickedImage = !!e.target.closest('#lightbox img');
+        const clickedClose = e.target === lbClose || e.target.closest('.lightbox-close');
+        if (e.target === lb || clickedClose || (clickedInsideLightbox && !clickedImage)) { closeLightbox(); }
+      });
+
+      document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeLightbox(); } });
+    })();
+  </script>
+</body>
+</html>

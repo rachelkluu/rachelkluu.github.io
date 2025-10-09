@@ -366,6 +366,43 @@ img.lightboxable {
   margin-right: 0.4rem;
 }
 
+/* Outreach: make experience titles labeled and dates muted like Projects */
+.page-outreach .project-title {
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #0b2f66; /* slightly stronger heading color */
+}
+.page-outreach .project-title::before {
+  content: "Experience";
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #023e7d;
+  background: rgba(3,102,214,0.08);
+  padding: 0.18rem 0.5rem;
+  border-radius: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.page-outreach .project-date {
+  font-size: 0.85rem;
+  color: #6b7280; /* match Projects muted gray */
+  font-weight: 500;
+  margin-left: 0.5rem;
+  align-self: center;
+}
+
+/* Slightly emphasize the page heading for Outreach */
+.page-outreach h1 {
+  font-size: 2.2rem;
+  color: #023e7d;
+  letter-spacing: 0.2px;
+  margin-bottom: 0.25rem;
+}
+
 /* Responsive: stack on small screens */
 @media (max-width: 700px) {
   .page-projects .project {
@@ -376,4 +413,49 @@ img.lightboxable {
     height: auto;
     flex: none;
   }
+}
+
+/* Make the About page header title span both columns and center it */
+.page-about .header-grid h1 {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+/* Outreach page specific styles */
+.page-outreach .project {
+  gap: 1rem;
+}
+
+.page-outreach .project-img {
+  width: 160px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  flex: 0 0 160px;
+}
+
+.page-outreach .outreach-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+  align-items: start;
+}
+.page-outreach .outreach-photos img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+.page-outreach .outreach-photos img:hover { transform: translateY(-4px); box-shadow: 0 10px 26px rgba(0,0,0,0.12); }
+
+/* Make the page-level gallery smaller on outreach page too */
+.page-outreach .gallery img {
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
