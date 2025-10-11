@@ -14,15 +14,17 @@ body {
   color: #111;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 2rem; /* consistent main title size */
   margin-bottom: 0.5rem;
   text-align: center;
+  color: #111; /* black-ish for consistency */
 }
 h2 {
   font-size: 1.25rem;
   margin-top: 1.5rem;
   border-bottom: 2px solid #eee;
   padding-bottom: 0.25rem;
+  color: #111; /* force black color for h2 across pages */
 }
 a {
   color: var(--accent);
@@ -374,18 +376,6 @@ img.lightboxable {
   gap: 0.6rem;
   color: #0b2f66; /* slightly stronger heading color */
 }
-.page-outreach .project-title::before {
-  content: "Experience";
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 700;
-  color: #023e7d;
-  background: rgba(3,102,214,0.08);
-  padding: 0.18rem 0.5rem;
-  border-radius: 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-}
 
 .page-outreach .project-date {
   font-size: 0.85rem;
@@ -458,4 +448,51 @@ img.lightboxable {
   height: auto;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+/* Override any page-specific variations so Projects/Outreach headers match */
+.page-projects h2,
+.page-outreach h2,
+.page-about h2 {
+  color: #111;
+  font-size: 1.25rem;
+}
+
+.page-outreach h1,
+.page-projects h1,
+.page-about h1 {
+  font-size: 2rem;
+  color: #111;
+  text-align: center;
+}
+
+/* Add spacing between outreach entries (project-body blocks) */
+.page-outreach .project-body {
+  margin-bottom: 1.6rem;
+}
+
+/* Make Outreach project-links look like Projects buttons */
+.page-outreach .project-links {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.page-outreach .project-links a {
+  font-size: 0.9rem;
+  color: white;
+  background: var(--accent);
+  padding: 0.35rem 0.6rem;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 18px rgba(3,102,214,0.12);
+  transition: transform 120ms ease, box-shadow 120ms ease, background 120ms ease;
+}
+.page-outreach .project-links a:hover,
+.page-outreach .project-links a:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(3,102,214,0.18);
+  background: #024e9a;
 }
