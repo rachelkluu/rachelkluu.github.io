@@ -496,3 +496,30 @@ img.lightboxable {
   box-shadow: 0 12px 30px rgba(3,102,214,0.18);
   background: #024e9a;
 }
+
+/* About page: split layout for Looking Ahead with a side photo */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.25rem;
+  align-items: start;
+}
+.split .side-photo {
+  width: 100%;
+  height: auto;
+  max-width: 320px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+  .split .side-photo {
+    max-width: 80%;
+    margin: 1rem auto 0 auto;
+  }
+}
